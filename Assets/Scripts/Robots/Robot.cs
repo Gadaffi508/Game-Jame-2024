@@ -46,29 +46,3 @@ public abstract class Robot : MonoBehaviour
     }
     #endregion
 }
-
-#if UNITY_EDITOR
-[CustomEditor(typeof(Robot)), InitializeOnLoadAttribute]
-public class RobotEditor : Editor
-{
-    Robot fpc;
-    SerializedObject SerFPC;
-
-    private void OnEnable()
-    {
-        fpc = (Robot)target;
-        SerFPC = new SerializedObject(fpc);
-    }
-
-    public override void OnInspectorGUI()
-    {
-        SerFPC.Update();
-
-        EditorGUILayout.Space();
-        GUILayout.Label("Robot Manager", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 16 });
-        GUILayout.Label("Yusuf Arslan", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Normal, fontSize = 12 });
-        GUILayout.Label("version 1.0.1", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Normal, fontSize = 12 });
-        EditorGUILayout.Space();
-    }
-}
-#endif

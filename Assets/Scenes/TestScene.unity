@@ -5622,7 +5622,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: f51fa7ba6973b404a84da0b08d05a95d, type: 3}
   m_Controller: {fileID: 9100000, guid: f9afc735e5da9a14c81cee4e758beb25, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -5854,6 +5854,7 @@ GameObject:
   - component: {fileID: 3225513704775897298}
   - component: {fileID: 1454621132228159712}
   - component: {fileID: 7537505615443862764}
+  - component: {fileID: 7537505615443862765}
   m_Layer: 0
   m_Name: FirstPersonController
   m_TagString: Player
@@ -8563,6 +8564,21 @@ MonoBehaviour:
   joint: {fileID: 585727476141462654}
   bobSpeed: 10
   bobAmount: {x: 0, y: 0.1, z: 0}
+--- !u!114 &7537505615443862765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803250143962233942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcdfd65a4a04c3f499abfea7ea66dc10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talentTime: 10
+  slowMotionTransationKey: 108
+  fastotionTransationKey: 102
 --- !u!1 &7582177949982556995
 GameObject:
   m_ObjectHideFlags: 0
