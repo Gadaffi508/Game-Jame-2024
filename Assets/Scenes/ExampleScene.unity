@@ -4968,11 +4968,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8563979881998664028}
   m_SourcePrefab: {fileID: 100100000, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
---- !u!20 &8563979881998664026 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 7676726941914951383, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-  m_PrefabInstance: {fileID: 8563979881998664025}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8563979881998664027 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 803250144553824807, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
@@ -4993,11 +4988,8 @@ MonoBehaviour:
   normalTimeScale: 1
   fastTimeScale: 2
   slowTimeScale: 0.5
-  mainCamera: {fileID: 8563979881998664026}
-  normalFOV: 60
-  fastFOV: 80
   abilityDuration: 10
-  cooldownDuration: 30
+  cooldownDuration: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

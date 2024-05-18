@@ -7,10 +7,6 @@ public class TimeControl : MonoBehaviour
     public float fastTimeScale = 2f;
     public float slowTimeScale = 0.5f;
 
-    public Camera mainCamera;
-    public float normalFOV = 60f;
-    public float fastFOV = 80f;
-
     public float abilityDuration = 10f;
     public float cooldownDuration = 30f;
 
@@ -20,22 +16,21 @@ public class TimeControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && canUseAbility)
         {
-            StartCoroutine(UseAbility(fastTimeScale, fastFOV));
+            StartCoroutine(UseAbility(fastTimeScale));
             Debug.Log("1");
         }
         else if (Input.GetKeyDown(KeyCode.L) && canUseAbility)
         {
-            StartCoroutine(UseAbility(slowTimeScale, normalFOV));
+            StartCoroutine(UseAbility(slowTimeScale));
             Debug.Log("2");
         }
      
     }
 
-    private IEnumerator UseAbility(float timeScale, float fov)
+    private IEnumerator UseAbility(float timeScale)
     {
         canUseAbility = false;
         Time.timeScale = timeScale;
-        mainCamera.fieldOfView = fov;
 
         yield return new WaitForSecondsRealtime(abilityDuration);
 
@@ -49,6 +44,5 @@ public class TimeControl : MonoBehaviour
     private void SetNormalTime()
     {
         Time.timeScale = normalTimeScale;
-        mainCamera.fieldOfView = normalFOV;
     }
 }
