@@ -59,7 +59,5 @@ public class CharacterAnimControllerEditor : Editor
         GUILayout.Label("version 1.0.1", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Normal, fontSize = 12 });
         EditorGUILayout.Space();
     }
-
 }
-
 #endif

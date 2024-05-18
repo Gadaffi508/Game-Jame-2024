@@ -19,7 +19,7 @@ public class FirstPersonController : MonoBehaviour
 {
     private Rigidbody rb;
     private Animator _anim;
-
+    public static Action timeControl;
     #region Camera Movement Variables
 
     public Camera playerCamera;
@@ -205,6 +205,13 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
+       
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                
+                timeControl?.Invoke(); 
+            }
+        
         #region Camera
 
         // Control camera movement
