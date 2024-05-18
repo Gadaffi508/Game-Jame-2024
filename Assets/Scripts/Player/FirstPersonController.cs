@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.InputSystem.XR;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -139,7 +140,6 @@ public class FirstPersonController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         _anim = GetComponentInChildren<Animator>();
-
         crosshairObject = GetComponentInChildren<Image>();
 
         // Set internal variables
@@ -532,7 +532,7 @@ public class FirstPersonController : MonoBehaviour
         {
             // Resets when play stops moving
             timer = 0;
-            joint.localPosition = new Vector3(Mathf.Lerp(joint.localPosition.x, jointOriginalPos.x, Time.unscaledDeltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.y, jointOriginalPos.y, Time.unscaledDeltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.z, jointOriginalPos.z, Time.unscaledDeltaTime * bobSpeed));
+            joint.localPosition = new Vector3(Mathf.Lerp(joint.localPosition.x, jointOriginalPos.x, Time.unscaledDeltaTime* bobSpeed), Mathf.Lerp(joint.localPosition.y, jointOriginalPos.y, Time.unscaledDeltaTime* bobSpeed), Mathf.Lerp(joint.localPosition.z, jointOriginalPos.z, Time.unscaledDeltaTime* bobSpeed));
         }
     }
 }

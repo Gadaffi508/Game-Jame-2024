@@ -43,6 +43,13 @@ public class RobotManagerEditor : Editor
         GUILayout.Label("Yusuf Arslan", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Normal, fontSize = 12 });
         GUILayout.Label("version 1.0.1", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Normal, fontSize = 12 });
         EditorGUILayout.Space();
+        EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+        GUILayout.Label("Robot Distance Setup", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 13 }, GUILayout.ExpandWidth(true));
+        EditorGUILayout.Space();
+        fpc.distance = EditorGUILayout.Slider(new GUIContent("Max Distance", "Determines how fast the player will move while walking."), fpc.distance, .1f, 20);
+
+
+        SerFPC.ApplyModifiedProperties();
     }
 }
 #endif
