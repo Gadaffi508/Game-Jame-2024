@@ -56,6 +56,6 @@ public class TriggerInteraction : MonoBehaviour
     {
         interactionSucceeded = true;
         interactCanvas.gameObject.SetActive(false);
-        SceneManager.LoadScene("FuturTimeScene");
+        SceneManager.LoadScene("FutureTimeScene");
     }
 }
