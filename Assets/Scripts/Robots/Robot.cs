@@ -14,6 +14,7 @@ public abstract class Robot : MonoBehaviour
     {
         _anim = GetComponentInChildren<Animator>();
         _agent = GetComponent<NavMeshAgent>();
+        _target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()

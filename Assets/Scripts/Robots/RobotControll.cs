@@ -55,6 +55,8 @@ public class RobotControllEditor : Editor
         GUILayout.Label("Robot Distance Setup", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 13 }, GUILayout.ExpandWidth(true));
         EditorGUILayout.Space();
         fpc.distance = EditorGUILayout.Slider(new GUIContent("Max Distance", "Determines how fast the player will move while walking."), fpc.distance, .1f, 20);
+        fpc._target = EditorGUILayout.ObjectField(new GUIContent("Target"), fpc._target, typeof(Transform), true) as Transform;
+
 
 
         SerFPC.ApplyModifiedProperties();
