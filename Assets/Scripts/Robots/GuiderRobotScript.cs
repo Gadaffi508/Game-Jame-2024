@@ -8,6 +8,7 @@ public class RobotController : MonoBehaviour
     private AudioSource audioSource;
     private NavMeshAgent navMeshAgent;
     private SubtitleManager subtitleManager; // Reference to the SubtitleManager script
+    private bool hasTriggered = false; // Flag to track if trigger has been activated
 
     void Start()
     {
@@ -30,9 +31,10 @@ public class RobotController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!hasTriggered && other.CompareTag("Player"))
         {
             PlayAudioAndMove();
+            hasTriggered = true; // Set the flag to true to prevent repeated triggering
         }
     }
 
@@ -53,6 +55,9 @@ public class RobotController : MonoBehaviour
 
             // Move to destination after the audio finishes
             Invoke("MoveToDestination", audioClip.length);
+
+            // Hide subtitles after the same duration
+            Invoke("HideSubtitles", audioClip.length);
         }
         else
         {
@@ -85,6 +90,14 @@ public class RobotController : MonoBehaviour
             {
                 Debug.LogError("Destination is not set.");
             }
+        }
+    }
+
+    void HideSubtitles()
+    {
+        if (subtitleManager != null)
+        {
+            subtitleManager.HideSubtitle();
         }
     }
 }
